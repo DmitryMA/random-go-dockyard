@@ -8,10 +8,10 @@ type Person struct {
 }
 
 func main() {
-	// person := Person{
-	// 	Name: "Dmitrii",
-	// 	Age: 23,
-	// }	
+	person := Person{
+		Name: "Dmitrii",
+		Age: 23,
+	}	
 
 	// employee := struct {
 	// 	name string
@@ -44,4 +44,16 @@ func main() {
 	}
 
 	fmt.Printf("%+v \n", contact)
+
+	fmt.Printf("Before %s \n", person.Name)
+	person.modifyPersonName("Next Name")
+	fmt.Printf("After %s \n", person.Name)
+
+	// x := 20
+	// ptr := &x
+	// fmt.Printf("%d %p \n", x, ptr);
+}
+
+func (person *Person) modifyPersonName(name string)  {
+	person.Name = name
 }
