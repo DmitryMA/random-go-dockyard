@@ -1,29 +1,25 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	age := 23
+	numbers := [5] int{ 10, 20, 30, 40, 55}
 
-	if age >= 24 {
-		fmt.Printf("You are adult")
-	} else if age < 23 {
-		fmt.Printf("You are child")
-	} else {
-		fmt.Printf("Someone else")
-	}
+	allNumbers := numbers[:]
+	threeNumbers := numbers[0:3]
 
-	day := "Monday"
+	fruits := []string{"7","8","9","10"}
+	fruits = append(fruits, "11")
+	fruits = append(fruits, "12", "13")
 
-	switch day {
-		case "Monday":
-			fmt.Printf("Start of the week")
-			fallthrough
-		case "Thursday":
-			fmt.Printf("mid week")
-		default: fmt.Printf("other day")
+	otherFruits := []string{"20", "21", "22"}
+
+	fruits = append(fruits, otherFruits...)
+
+	fmt.Printf("%v \n %v \n %v", allNumbers, threeNumbers, fruits)
+
+	for idx, fruit := range fruits {
+		fmt.Printf("%d => %s \n", idx, fruit)
 	}
 }
 
