@@ -2,31 +2,46 @@ package main
 
 import "fmt"
 
+type Person struct {
+	Name string
+	Age int
+}
+
 func main() {
-	numbers := [5] int{ 10, 20, 30, 40, 55}
+	// person := Person{
+	// 	Name: "Dmitrii",
+	// 	Age: 23,
+	// }	
 
-	allNumbers := numbers[:]
-	threeNumbers := numbers[0:3]
+	// employee := struct {
+	// 	name string
+	// 	id int
+	// 	} {
+	// 		name: "Dmitrii",
+	// 		id: 1,
+	// 	}
 
-	fruits := []string{"7","8","9","10"}
-	fruits = append(fruits, "11")
-	fruits = append(fruits, "12", "13")
 
-	otherFruits := []string{"20", "21", "22"}
 
-	fruits = append(fruits, otherFruits...)
-
-	fmt.Printf("%v \n %v \n %v", allNumbers, threeNumbers, fruits)
-
-	for idx, fruit := range fruits {
-		fmt.Printf("%d => %s \n", idx, fruit)
+	type Address struct {
+		Street string
+		City string
 	}
-}
 
-func add(a int, b int) int {
-	return a + b
-}
+	type Contact struct {
+		Name string
+		Address Address
+		Phone string
+	}
 
-func calculate(a, b int) (int, int) {
-	return a + b, a * b
+	contact := Contact {
+		Name: "Mark",
+		Address: Address {
+			Street: "Lenin Street",
+			City: "Moscow",
+		},
+		Phone: "+8 0000000",
+	}
+
+	fmt.Printf("%+v \n", contact)
 }
