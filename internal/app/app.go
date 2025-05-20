@@ -13,36 +13,34 @@ import (
 )
 
 type Application struct {
-	Logger *log.Logger
+	Logger         *log.Logger
 	WorkoutHandler *api.WorkoutHandler
-	DB *sql.DB
+	DB             *sql.DB
 }
-
 
 func NewApplication() (*Application, error) {
 	pgDB, err := store.Open()
-
 	if err != nil {
 		return nil, err
 	}
 
 	err = store.MigrateFS(pgDB, migrations.FS, ".")
-
-	if  err != nil {
+	if err != nil {
 		panic(err)
 	}
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
- 
-	// our stores
-	
-	// our handlers
-	workoutHandler := api.NewWorkoutHandler()
 
-	app := &Application {	
- 	 	Logger: logger,
+	// our stores will go here
+	workoutStore := store.NewPostgresWorkoutStore(pgDB)
+
+	// our handlers will go here
+	workoutHandler := api.NewWorkoutHandler(workoutStore)
+
+	app := &Application{
+		Logger:         logger,
 		WorkoutHandler: workoutHandler,
-		DB: pgDB,
+		DB:             pgDB,
 	}
 
 	return app, nil
