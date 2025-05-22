@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/store"
+	"github.com/DmitryMA/random-go-dockyard/internal/store"
 	"github.com/go-chi/chi/v5"
 )
 

@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/api"
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/store"
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/migrations"
+	"github.com/DmitryMA/random-go-dockyard/internal/api"
+	"github.com/DmitryMA/random-go-dockyard/internal/store"
+	"github.com/DmitryMA/random-go-dockyard/migrations"
 )
 
 type Application struct {

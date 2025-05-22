@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/app"
+	"github.com/DmitryMA/random-go-dockyard/internal/app"
 	"github.com/go-chi/chi/v5"
 )
 

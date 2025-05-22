@@ -1,4 +1,4 @@
-module github.com/DmitryMA/go-Chi-PostgreSQL-Docker
+module github.com/DmitryMA/random-go-dockyard
 
 go 1.24.3
 

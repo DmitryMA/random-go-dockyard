@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/app"
-	"github.com/DmitryMA/go-Chi-PostgreSQL-Docker/internal/routes"
+	"github.com/DmitryMA/random-go-dockyard/internal/app"
+	"github.com/DmitryMA/random-go-dockyard/internal/routes"
 )
 
 func main()	{
