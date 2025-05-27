@@ -194,7 +194,7 @@ func (pg *PostgresWorkoutStore) DeleteWorkout(id int64) error {
 		WHERE id = $1
 	`
 
-	result, err := pg.db.Exec(query)
+	result, err := pg.db.Exec(query, id)
 	if err != nil {
 		return err
 	}
